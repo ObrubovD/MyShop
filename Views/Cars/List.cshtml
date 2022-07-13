@@ -1,0 +1,20 @@
+﻿<h1>Все автомобили</h1>
+<h3>@Model.currCategory</h3>
+
+<select onchange="document.location=this.options[this.selectedIndex].value">
+      <option value="#">Выбрать категорию</option>
+      <option value="/Cars/List">Все автомобили</option>
+      <option value="/Cars/List/electro">Электромобили</option>
+      <option value="/Cars/List/fuel">Классические автомобили</option>
+</select>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach(Car car in Model.allCars)
+        {
+          @Html.Partial("AllCars",car)  
+        }     
+    }
+</div>
+
+    
